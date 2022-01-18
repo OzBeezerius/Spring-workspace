@@ -1,0 +1,23 @@
+package com.everis.bootcamp.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+
+import com.everis.bootcamp.person.Person;
+
+@Configuration
+public class Config {
+
+	 @Bean(name = "personPrototype")
+	 @Scope("prototype")
+	 public Person personPrototype() {
+		 return new Person();
+	 }
+	 
+	 @Bean(name = "personSingleton")
+	 @Scope("singleton")
+	 public Person personSingleton() {
+		 return new Person();
+	 }
+}
