@@ -1,0 +1,9 @@
+server: 
+  port: 8888
+spring: 
+  # Spring Cloud Config Server Repository  cloud:    config:      server:        git:
+          uri: https://github.com/OzBeezerius/Bootcamp-Configserver
+          default-label: main
+          search-paths:
+          - '*service'
+ 
