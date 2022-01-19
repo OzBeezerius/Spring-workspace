@@ -7,3 +7,14 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+resilience4j.retry:
+  configs:
+    default:
+      max-attempts: 4
+      waitDuration: 6s
+      retryExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.util.concurrent.TimeoutException
+        - java.io.IOException
+    instances:
+        base-config: default
